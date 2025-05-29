@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robert Robinson - Living Biography</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main JavaScript -->
+    <script src="assets/js/main.js"></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="header">
+        <div class="header-content">
+        <div class="hero-photo">👨‍💼</div>
+        <h1 class="name">Robert Robinson</h1>
+        <p class="tagline">Serial Entrepreneur • Educator • Technologist • Father</p>
+        <p class="life-span">1965 - Present</p>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav-bar">
+        <div class="nav-items">
+            <div class="nav-item active" data-section="story" onclick="showSection('story')">His Story</div>
+            <div class="nav-item" data-section="timeline" onclick="showSection('timeline')">Life Timeline</div>
+            <div class="nav-item" data-section="impact" onclick="showSection('impact')">Impact Stories</div>
+            <div class="nav-item" data-section="wisdom" onclick="showSection('wisdom')">Wisdom & Advice</div>
+            <div class="nav-item" data-section="memories" onclick="showSection('memories')">Memory Gallery</div>
+            <div class="nav-item" data-section="chat" onclick="showSection('chat')">Ask Robert</div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Primary Content Panel -->
+        <div class="content-panel">
+            <!-- His Story Section -->
+            <div id="story-section" class="content-section">
+                <h2 class="chapter-title">
+                    📖 Chapter 1: The Entrepreneur
+                </h2>
+                
+                <div class="voice-player">
+                    <button class="play-btn">▶️</button>
+                    <div class="voice-text">"Listen to this chapter in Robert's voice"</div>
+                </div>
+                
+                <div class="chapter-content">
+                    <p>Robert Robinson didn't just build companies—he built dreams into reality. With an engineer's precision and an entrepreneur's vision, he transformed ideas into thriving businesses that employed hundreds and touched thousands of lives.</p>
+                    
+                    <p>His journey began in the early 1980s when personal computers were still mysterious boxes to most people. Robert saw their potential not as gadgets, but as tools for human empowerment. This insight would drive three decades of innovation...</p>
+                </div>
+                
+                <div class="photo-gallery">
+                    <div class="photo">📸</div>
+                    <div class="photo">🏢</div>
+                    <div class="photo">👥</div>
+                    <div class="photo">🎓</div>
+                </div>
+            </div>
+
+            <!-- Timeline Section -->
+            <div id="timeline-section" class="content-section" style="display: none;">
+                <h2 class="chapter-title">📅 Life Timeline</h2>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">1976</div>
+                    <div class="timeline-content">
+                        <strong>Marriage & First Child</strong>
+                        <p>Married Patricia Johnson and welcomed first child Henry into the world.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">1977</div>
+                    <div class="timeline-content">
+                        <strong>College Graduation</strong>
+                        <p>Graduated from Canisius College with a degree in English.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">1979</div>
+                    <div class="timeline-content">
+                        <strong>Advanced Degree & Life Changes</strong>
+                        <p>Earned MPA from University at Buffalo and divorced Patricia Johnson.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">1981</div>
+                    <div class="timeline-content">
+                        <strong>New Beginning</strong>
+                        <p>Married Denise Gary, starting a new chapter in life.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">1982</div>
+                    <div class="timeline-content">
+                        <strong>Family Growth</strong>
+                        <p>Welcomed second child Khalil into the world.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">1984</div>
+                    <div class="timeline-content">
+                        <strong>Entrepreneurial Beginnings</strong>
+                        <p>Founded Automated Design Solutions, which digitized the State University of New York's registration and bursar system.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">1994</div>
+                    <div class="timeline-content">
+                        <strong>Digital Revolution</strong>
+                        <p>Became immersed in the internet revolution, seeing new opportunities for technology advancement.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Impact Stories Section -->
+            <div id="impact-section" class="content-section" style="display: none;">
+                <h2 class="chapter-title">💝 How He Changed Lives</h2>
+                
+                <div class="impact-story">
+                    <div class="story-author">Sarah Mitchell, Former Employee</div>
+                    <p>"Robert didn't just give me a job—he gave me confidence. When I was a young engineer doubting my abilities, he saw potential I couldn't see in myself. His mentorship changed the entire trajectory of my career."</p>
+                </div>
+                
+                <div class="impact-story">
+                    <div class="story-author">Dr. James Chen, University Colleague</div>
+                    <p>"In 20 years of academia, I've never met someone who could make complex technology feel so accessible. Robert had this gift for breaking down barriers between theory and practice."</p>
+                </div>
+                
+                <div class="impact-story">
+                    <div class="story-author">Emily Robinson, Daughter</div>
+                    <p>"Dad taught me that failure isn't the opposite of success—it's the stepping stone to it. Every setback was just another data point in the experiment of life."</p>
+                </div>
+            </div>
+
+            <!-- Chat Section -->
+            <div id="chat-section" class="content-section" style="display: none;">
+                <h2 class="chapter-title">💬 Ask Robert Anything</h2>
+                
+                <div class="chat-interface">
+                    <div class="chat-header">What would Robert say about...</div>
+                    <input type="text" class="chat-input" placeholder="Ask about career advice, life lessons, or anything else...">
+                    <button class="chat-btn">Ask Robert</button>
+                </div>
+                
+                <div style="margin-top: 2rem;">
+                    <h3>Popular Questions:</h3>
+                    <ul style="margin-top: 1rem; line-height: 2;">
+                        <li><a href="#" style="color: #3498db;">How do you know when to take a risk?</a></li>
+                        <li><a href="#" style="color: #3498db;">What's the most important thing in building a team?</a></li>
+                        <li><a href="#" style="color: #3498db;">How do you balance work and family?</a></li>
+                        <li><a href="#" style="color: #3498db;">What would you tell your 25-year-old self?</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <!-- Quick Stats -->
+            <div class="sidebar-panel">
+                <h3 style="margin-bottom: 1rem; color: #2c3e50;">Legacy by Numbers</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Companies Founded</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">People Mentored</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">25</div>
+                        <div class="stat-label">Years Teaching</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">∞</div>
+                        <div class="stat-label">Impact</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation/Chapters -->
+            <div class="sidebar-panel">
+                <h3 style="margin-bottom: 1rem; color: #2c3e50;">Explore His Story</h3>
+                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button style="padding: 0.75rem; background: #f8f9fa; border: 1px solid #ddd; border-radius: 8px; cursor: pointer;">🚀 The Entrepreneur</button>
+                    <button style="padding: 0.75rem; background: #f8f9fa; border: 1px solid #ddd; border-radius: 8px; cursor: pointer;">👨‍🏫 The Teacher</button>
+                    <button style="padding: 0.75rem; background: #f8f9fa; border: 1px solid #ddd; border-radius: 8px; cursor: pointer;">👨‍👩‍👧‍👦 The Family Man</button>
+                    <button style="padding: 0.75rem; background: #f8f9fa; border: 1px solid #ddd; border-radius: 8px; cursor: pointer;">🔬 The Innovator</button>
+                    <button style="padding: 0.75rem; background: #f8f9fa; border: 1px solid #ddd; border-radius: 8px; cursor: pointer;">🌟 The Mentor</button>
+                </div>
+            </div>
+
+            <!-- Recent Contributions -->
+            <div class="sidebar-panel">
+                <h3 style="margin-bottom: 1rem; color: #2c3e50;">Recent Memories Added</h3>
+                <div style="font-size: 0.9rem; line-height: 1.6;">
+                    <p><strong>Sarah K.</strong> shared a photo from the 1995 company retreat</p>
+                    <p><strong>Mike T.</strong> added a story about Robert's mentorship</p>
+                    <p><strong>Jennifer R.</strong> uploaded his favorite presentation slides</p>
+                </div>
+                <button style="width: 100%; margin-top: 1rem; padding: 0.75rem; background: #27ae60; color: white; border: none; border-radius: 8px; cursor: pointer;">+ Add Your Memory</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Photo Modal -->
+    <div class="modal" id="photo-modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <img id="modal-image" src="" alt="Full size image">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text"> 2025 Living Biography Project - Robert Robinson</p>
+            <div class="footer-links">
+                <a href="#" class="footer-link">About</a>
+                <a href="#" class="footer-link">Privacy</a>
+                <a href="#" class="footer-link">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript moved to external file: assets/js/main.js -->
+</body>
+</html>
