@@ -4,31 +4,299 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Robert Robinson - Living Biography</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Main JavaScript -->
-    <script src="assets/js/main.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8f9fa;
+            color: #333;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .hero-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid white;
+            background: #ddd;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #666;
+        }
+        
+        .name {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+        
+        .life-span {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+        
+        .nav-bar {
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-items {
+            display: flex;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .nav-item {
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .nav-item:hover,
+        .nav-item.active {
+            color: #3498db;
+            border-bottom-color: #3498db;
+        }
+        
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+        
+        .content-panel {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .sidebar-panel {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        .chapter-title {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .chapter-content {
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+        
+        .voice-player {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .play-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .voice-text {
+            font-style: italic;
+            color: #666;
+        }
+        
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .photo {
+            aspect-ratio: 1;
+            background: #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+        }
+        
+        .photo:hover {
+            transform: scale(1.05);
+        }
+        
+        .timeline-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .timeline-date {
+            font-weight: bold;
+            color: #3498db;
+            min-width: 80px;
+        }
+        
+        .timeline-content {
+            flex: 1;
+        }
+        
+        .impact-story {
+            background: #f8f9fa;
+            border-left: 4px solid #27ae60;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .story-author {
+            font-weight: bold;
+            color: #27ae60;
+            margin-bottom: 0.5rem;
+        }
+        
+        .chat-interface {
+            border: 2px solid #3498db;
+            border-radius: 12px;
+            padding: 1rem;
+        }
+        
+        .chat-header {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #3498db;
+            font-weight: bold;
+        }
+        
+        .chat-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .chat-btn {
+            width: 100%;
+            padding: 0.75rem;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #3498db;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-items {
+                flex-wrap: wrap;
+            }
+            
+            .nav-item {
+                padding: 0.75rem 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header Section -->
     <div class="header">
-        <div class="header-content">
         <div class="hero-photo">👨‍💼</div>
         <h1 class="name">Robert Robinson</h1>
         <p class="tagline">Serial Entrepreneur • Educator • Technologist • Father</p>
-        <p class="life-span">1965 - Present</p>
+        <p class="life-span">1955 - 2023</p>
     </div>
 
     <!-- Navigation -->
     <div class="nav-bar">
         <div class="nav-items">
-            <div class="nav-item active" data-section="story" onclick="showSection('story')">His Story</div>
-            <div class="nav-item" data-section="timeline" onclick="showSection('timeline')">Life Timeline</div>
-            <div class="nav-item" data-section="impact" onclick="showSection('impact')">Impact Stories</div>
-            <div class="nav-item" data-section="wisdom" onclick="showSection('wisdom')">Wisdom & Advice</div>
-            <div class="nav-item" data-section="memories" onclick="showSection('memories')">Memory Gallery</div>
-            <div class="nav-item" data-section="chat" onclick="showSection('chat')">Ask Robert</div>
+            <div class="nav-item active" onclick="showSection('story')">His Story</div>
+            <div class="nav-item" onclick="showSection('timeline')">Life Timeline</div>
+            <div class="nav-item" onclick="showSection('impact')">Impact Stories</div>
+            <div class="nav-item" onclick="showSection('wisdom')">Wisdom & Advice</div>
+            <div class="nav-item" onclick="showSection('memories')">Memory Gallery</div>
+            <div class="nav-item" onclick="showSection('chat')">Ask Robert</div>
         </div>
     </div>
 
@@ -63,61 +331,101 @@
 
             <!-- Timeline Section -->
             <div id="timeline-section" class="content-section" style="display: none;">
-                <h2 class="chapter-title">📅 Life Timeline</h2>
+                <h2 class="chapter-title">📅 Life Journey</h2>
                 
                 <div class="timeline-item">
                     <div class="timeline-date">1976</div>
                     <div class="timeline-content">
-                        <strong>Marriage & First Child</strong>
-                        <p>Married Patricia Johnson and welcomed first child Henry into the world.</p>
+                        <strong>Marriage & First Child</strong><br>
+                        Married Patricia Johnson and welcomed first child Henry into the world
                     </div>
                 </div>
                 
                 <div class="timeline-item">
                     <div class="timeline-date">1977</div>
                     <div class="timeline-content">
-                        <strong>College Graduation</strong>
-                        <p>Graduated from Canisius College with a degree in English.</p>
+                        <strong>College Graduation</strong><br>
+                        Graduated from Canisius College with a degree in English
                     </div>
                 </div>
                 
                 <div class="timeline-item">
                     <div class="timeline-date">1979</div>
                     <div class="timeline-content">
-                        <strong>Advanced Degree & Life Changes</strong>
-                        <p>Earned MPA from University at Buffalo and divorced Patricia Johnson.</p>
+                        <strong>Advanced Degree & Changes</strong><br>
+                        Earned MPA from University at Buffalo and divorced Patricia Johnson
                     </div>
                 </div>
                 
                 <div class="timeline-item">
                     <div class="timeline-date">1981</div>
                     <div class="timeline-content">
-                        <strong>New Beginning</strong>
-                        <p>Married Denise Gary, starting a new chapter in life.</p>
+                        <strong>New Beginning</strong><br>
+                        Married Denise Gary, starting a new chapter in life
                     </div>
                 </div>
                 
                 <div class="timeline-item">
                     <div class="timeline-date">1982</div>
                     <div class="timeline-content">
-                        <strong>Family Growth</strong>
-                        <p>Welcomed second child Khalil into the world.</p>
+                        <strong>Family Growth</strong><br>
+                        Welcomed second child Khalil into the world
                     </div>
                 </div>
                 
                 <div class="timeline-item">
                     <div class="timeline-date">1984</div>
                     <div class="timeline-content">
-                        <strong>Entrepreneurial Beginnings</strong>
-                        <p>Founded Automated Design Solutions, which digitized the State University of New York's registration and bursar system.</p>
+                        <strong>Entrepreneurial Beginnings</strong><br>
+                        Founded Automated Design Solutions, digitized SUNY's registration and bursar system
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">1986</div>
+                    <div class="timeline-content">
+                        <strong>Health Challenge</strong><br>
+                        Diagnosed with Multiple Sclerosis
                     </div>
                 </div>
                 
                 <div class="timeline-item">
                     <div class="timeline-date">1994</div>
                     <div class="timeline-content">
-                        <strong>Digital Revolution</strong>
-                        <p>Became immersed in the internet revolution, seeing new opportunities for technology advancement.</p>
+                        <strong>Digital Pioneer</strong><br>
+                        Became obsessed with the internet and wrote a book
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">1995</div>
+                    <div class="timeline-content">
+                        <strong>Education Innovation</strong><br>
+                        Started Newton's Odyssey, an online education platform
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2000</div>
+                    <div class="timeline-content">
+                        <strong>Academic Career</strong><br>
+                        Began teaching at New Jersey Academy boys school
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2005</div>
+                    <div class="timeline-content">
+                        <strong>Education & Sustainability</strong><br>
+                        Started Critical Thinking Education Company and wrote a book on solar panel installation
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2010</div>
+                    <div class="timeline-content">
+                        <strong>Renewable Energy</strong><br>
+                        Started Solar Panel Installation Company
                     </div>
                 </div>
             </div>
@@ -214,26 +522,22 @@
         </div>
     </div>
 
-    <!-- Photo Modal -->
-    <div class="modal" id="photo-modal">
-        <div class="modal-content">
-            <button class="modal-close">&times;</button>
-            <img id="modal-image" src="" alt="Full size image">
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <p class="footer-text"> 2025 Living Biography Project - Robert Robinson</p>
-            <div class="footer-links">
-                <a href="#" class="footer-link">About</a>
-                <a href="#" class="footer-link">Privacy</a>
-                <a href="#" class="footer-link">Contact</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- JavaScript moved to external file: assets/js/main.js -->
+    <script>
+        function showSection(sectionName) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => section.style.display = 'none');
+            
+            // Remove active class from all nav items
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => item.classList.remove('active'));
+            
+            // Show selected section
+            document.getElementById(sectionName + '-section').style.display = 'block';
+            
+            // Add active class to clicked nav item
+            event.target.classList.add('active');
+        }
+    </script>
 </body>
 </html>
