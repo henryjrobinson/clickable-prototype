@@ -19,6 +19,14 @@ Thumbs.db
 
 # Build directories #
 dist/
+
+# Large media files #
+*.tif
+*.tiff
+Photos-1-001 (2)/
+*.mp4
+*.MP4
+
 build/
 
 # Temporary files #
